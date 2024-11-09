@@ -1,14 +1,22 @@
 import "./App.css";
-import Menu from "./components/Menu";
+import { Route, Routes } from "react-router-dom";
+import Home from "./Pages/Mapa";
+import Anuncio from "./Pages/Anuncio";
+import Grupo from "./Pages/Grupo";
+import Bar from "./components/Bar";
+import Menu from "./Pages/Menu";
 
 function App() {
   return (
-    <>
-      <div className="relative h-[100vh]">
-        <div className=""></div>
-        <Menu />
-      </div>
-    </>
+    <div className="relative h-[100vh]">
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/anuncio" element={<Anuncio />} />
+        <Route path="/grupos" element={<Grupo />} />
+        <Route path="/menu" element={<Menu />} />
+      </Routes>
+      <Bar />
+    </div>
   );
 }
 
