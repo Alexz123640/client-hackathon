@@ -6,31 +6,36 @@ import {
   LikeOutlined,
   SendOutlined,
 } from "@ant-design/icons";
-import { useLocation } from "react-router-dom";
 import moment from "moment";
 
 const { TextArea } = Input;
 
 const DetalleComentario = () => {
-  const noticia = [
+  const noticia = 
     {
       id: 1,
       usuarioNombre: "Juan Pérez",
       usuarioFoto: "https://randomuser.me/api/portraits/men/1.jpg",
-      fecha: moment().subtract(5, "minutes").toISOString(),
-      descripcion:
-        "Fiesta de aniversario en el centro de Arequipa, ¡gran ambiente!",
+      fecha: moment().subtract(5, 'minutes').toISOString(),
+      descripcion: "Fiesta de aniversario en el centro de Arequipa, ¡gran ambiente!",
       fotos: ["https://via.placeholder.com/300x200"],
       comentarios: [
         {
           usuarioNombre: "Carlos González",
           usuarioFoto: "https://randomuser.me/api/portraits/men/2.jpg",
           comentario: "Se ve genial, espero llegar a tiempo.",
-          likes: 10,
-        },
+          likes: 10
+        }
       ],
-    },
-  ];
+      ubicacion: {
+        departamento: "Arequipa",
+        distrito: "Cercado",
+        latitud: -16.4090474,
+        longitud: -71.537451,
+        pais: "Perú"
+      }
+    }
+  ;
   if (!noticia) {
     return <p>No se encontró la noticia seleccionada.</p>;
   }
