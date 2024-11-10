@@ -1,8 +1,11 @@
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import { AdvancedMarker, useMap } from "@vis.gl/react-google-maps";
+import { Button } from "antd";
 import { useEffect, useRef, useState } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Markers = ({ points }) => {
+  const navigate = useNavigate();
   const map = useMap();
   const [markers, setMarkers] = useState({});
   const clusterer = useRef(null);
@@ -33,19 +36,25 @@ const Markers = ({ points }) => {
       }
     });
   };
-
+  const handleSaveLocation = (posicion) => {
+    console.log("Llamada al detalle");
+    navigate(`/detalleEvento?lat=${posicion.lat}&lng=${posicion.lng}`);
+  }
   return (
     <>
       {points.map((point) => (
+        
         <AdvancedMarker
-          position={point}
-          key={point.key}
-          ref={(marker) => setMarkerRef(marker, point.key)}
-        >
-          <span>
-            <img src="imgs/alert.svg" width={50} alt="img" />{" "}
-          </span>
+            position={{ lat: point.lat, lng: point.lng }}
+            key={point.key}
+            ref={(marker) => setMarkerRef(marker, point.key)}
+            onClick={() => handleSaveLocation(point)}
+          >
+            <span>
+              <img src="imgs/alert.svg" width={50} alt="img" />{" "}
+            </span>
         </AdvancedMarker>
+        
       ))}
     </>
   );
