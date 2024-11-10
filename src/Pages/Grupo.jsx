@@ -1,42 +1,50 @@
-import { useEffect, useState } from "react";
-import {
-  APIProvider,
-  Map,
-  Marker,
-  useMap,
-  useMarkerRef,
-} from "@vis.gl/react-google-maps";
-import { Navigate } from "react-router-dom";
-import AlertButton from "../components/AlertButton";
+import React, { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { Menu, Dropdown, Button, Input, List, Avatar } from "antd";
+import { MoreOutlined } from "@ant-design/icons";
 
+// Componente para la pantalla principal de Grupos
 const Grupo = () => {
-  const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
-  const MAP_ID = import.meta.env.VITE_PUBLIC_MAP_ID;
+  const navigate = useNavigate();
+  const grupos = [
+    { nombre: "Grupo 1", miembros: 10, imagen: "https://via.placeholder.com/50" },
+    { nombre: "Grupo 2", miembros: 15, imagen: "https://via.placeholder.com/50" },
+    { nombre: "Grupo 3", miembros: 8, imagen: "https://via.placeholder.com/50" },
+  ];
 
-  const mapOptions = {
-    disableDefaultUI: true,
-  };
-
-
+  const menu = (
+    <Menu>
+      <Menu.Item key="1" onClick={() => navigate("/crear-grupo")}>
+        + Crear nuevo grupo
+      </Menu.Item>
+      <Menu.Item key="2" onClick={() => navigate("/unirme-grupo")}>
+        Unirme a un grupo
+      </Menu.Item>
+    </Menu>
+  );
 
   return (
-    <APIProvider apiKey={API_KEY}>
-      <Map
-        style={{ width: "100vw", height: "100vh" }}
-        defaultCenter={{ lat: -16.3992754, lng: -71.5372471 }}
-        defaultZoom={15}
-        mapId={MAP_ID}
-        options={mapOptions}
-      >
-        <div
-          className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 cursor-pointer z-10"
-          onClick={() => alert("Marcador clickeado!")}
-        >
-          <img src="imgs/location.svg" width={60} alt="Marcador central" />
-        </div>
-        <AlertButton />
-      </Map>
-    </APIProvider>
+    <div className="w-screen h-screen bg-white">
+      <div className="text-xl text-black flex justify-between py-3 px-5 mb-4">
+        <span>Grupos</span>
+        <Dropdown overlay={menu} trigger={['click']}>
+          <MoreOutlined style={{ fontSize: "24px" }} />
+        </Dropdown>
+      </div>
+      <List
+        itemLayout="horizontal"
+        dataSource={grupos}
+        renderItem={(grupo) => (
+          <List.Item>
+            <List.Item.Meta
+              avatar={<Avatar src={grupo.imagen} />}
+              title={grupo.nombre}
+              description={`${grupo.miembros} miembros`}
+            />
+          </List.Item>
+        )}
+      />
+    </div>
   );
 };
 

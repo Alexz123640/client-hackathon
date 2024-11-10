@@ -6,6 +6,10 @@ import Grupo from "./Pages/Grupo";
 import Bar from "./components/Bar";
 import Menu from "./Pages/Menu";
 import Alerta from "./Pages/Alerta";
+import DetalleEvento from "./Pages/DetalleEvento";
+import DetalleComentarEvento from "./Pages/DetalleComentarEvento";
+import CrearGrupo from "./Pages/CrearGrupo";
+import UnirmeGrupo from "./Pages/UnirmeGrupo";
 
 function App() {
   const location = useLocation();
@@ -17,6 +21,10 @@ function App() {
         <Route path="/grupos" element={<Grupo />} />
         <Route path="/menu" element={<Menu />} />
         <Route path="/alerta" element={<Alerta />} />
+        <Route path="/detalleEvento" element={<DetalleEvento />} />
+        <Route path="/detalleComentarEvento" element={<DetalleComentarEvento />} />
+        <Route path="/crear-grupo" element={<CrearGrupo />} />
+        <Route path="/unirme-grupo" element={<UnirmeGrupo />} />
       </Routes>
       {location.pathname !== "/alerta" && <Bar />}
     </div>
