@@ -10,7 +10,7 @@ const Bar = () => {
   ];
   return (
     <>
-      <div className="bg-[#f2f2f2] absolute bottom-0 flex w-[100%] justify-around p-2 text-[13px]">
+      <div className="bg-[#fff] absolute bottom-0 flex w-[100%] justify-around p-2 text-[13px]">
         {options.map((option, index) => (
           <Link
             key={index}
@@ -18,7 +18,7 @@ const Bar = () => {
             className="flex justify-center items-center flex-col cursor-pointer"
           >
             <img src={`imgs/${option.icon}`} alt={option.name} />
-            <span>{option.name}</span>
+            <span className="text-[#113768]">{option.name}</span>
           </Link>
         ))}
       </div>
