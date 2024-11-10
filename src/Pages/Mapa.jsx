@@ -20,7 +20,7 @@ export default function Intro() {
         <Map
           style={{ width: "100vw", height: "100vh" }}
           defaultCenter={{ lat:-16.3992754, lng: -71.5372471 }}
-          defaultZoom={3}
+          defaultZoom={15}
           mapId='fb9f5de9cedd0760'
           gestureHandling={"greedy"}
           disableDefaultUI={true}
