@@ -247,6 +247,14 @@
       "lng": -71.54224799769844,
       "tipo": "suspicious",
       "key": "{\"name\":\"Alameda Pardo 123, Arequipa 04013, Peru\",\"lat\":-16.39881941689442,\"lng\":-71.54224799769844}"
+    },
+    {
+      "id": "8bb8",
+      "name": "Portal de la Municipalidad 128, Arequipa 04001, Peru",
+      "lat": -16.3992754,
+      "lng": -71.5372471,
+      "tipo": "accident",
+      "key": "{\"name\":\"Portal de la Municipalidad 128, Arequipa 04001, Peru\",\"lat\":-16.3992754,\"lng\":-71.5372471}"
     }
   ]
 }

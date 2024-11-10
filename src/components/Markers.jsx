@@ -38,7 +38,7 @@ const Markers = ({ points }) => {
   };
   const handleSaveLocation = (posicion) => {
     console.log("Llamada al detalle");
-    navigate(`/detalleEvento?lat=${posicion.lat}&lng=${posicion.lng}`);
+    navigate(`/detalleComentario?lat=${posicion.lat}&lng=${posicion.lng}`);
   }
   return (
     <>

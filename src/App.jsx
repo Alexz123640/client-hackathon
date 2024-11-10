@@ -10,6 +10,7 @@ import DetalleEvento from "./Pages/DetalleEvento";
 import DetalleComentarEvento from "./Pages/DetalleComentarEvento";
 import CrearGrupo from "./Pages/CrearGrupo";
 import UnirmeGrupo from "./Pages/UnirmeGrupo";
+import DetalleComentario from "./Pages/DetalleComentario";
 
 function App() {
   const location = useLocation();
@@ -25,6 +26,7 @@ function App() {
         <Route path="/detalleComentarEvento" element={<DetalleComentarEvento />} />
         <Route path="/crear-grupo" element={<CrearGrupo />} />
         <Route path="/unirme-grupo" element={<UnirmeGrupo />} />
+        <Route path="/detalleComentario" element={<DetalleComentario />} />
       </Routes>
       {location.pathname !== "/alerta" && <Bar />}
     </div>
