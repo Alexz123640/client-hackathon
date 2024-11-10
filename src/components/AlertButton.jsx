@@ -12,7 +12,8 @@ const AlertButton = () => {
       const lat = center.lat();
       const lng = center.lng();
       //navigate(`/anuncio`);
-      navigate(`/anuncio?lat=${lat}&lng=${lng}`);
+      navigate(`/alerta?lat=${lat}&lng=${lng}`);
+      console.log("center",lat,lng);
     }
   };
 

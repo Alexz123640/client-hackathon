@@ -6,3 +6,6 @@
   padding: 0;
   box-sizing: border-box;
 }
+.bg-radial-gradient {
+  background: radial-gradient(circle, #0b3b82, #113768);
+}
