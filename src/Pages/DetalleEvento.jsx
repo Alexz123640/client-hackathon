@@ -93,7 +93,7 @@ const DetalleEvento = () => {
       {/* Cabecera */}
       <div className="text-xl text-black flex justify-between py-3 px-5 mb-4">
         <span>
-          <Link to={"/"}>
+          <Link to={"/alerta"}>
             <ArrowLeftOutlined />
           </Link>
         </span>

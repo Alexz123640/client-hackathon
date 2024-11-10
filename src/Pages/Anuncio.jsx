@@ -48,14 +48,14 @@ const Anuncio = () => {
       usuarioNombre: "Juan Pérez",
       usuarioFoto: "https://randomuser.me/api/portraits/men/1.jpg",
       fecha: moment().subtract(5, 'minutes').toISOString(),
-      descripcion: "Fiesta de aniversario en el centro de Arequipa, ¡gran ambiente!",
+      descripcion: "Incendio en el centro de Arequipa. Los bomberos ya están en camino.",
       fotos: ["https://via.placeholder.com/300x200"],
       comentarios: [
         {
           usuarioNombre: "Carlos González",
           usuarioFoto: "https://randomuser.me/api/portraits/men/2.jpg",
-          comentario: "Se ve genial, espero llegar a tiempo.",
-          likes: 10
+          comentario: "Espero que todos estén bien, es terrible lo que está pasando.",
+          likes: 15
         }
       ],
       ubicacion: {
@@ -71,14 +71,14 @@ const Anuncio = () => {
       usuarioNombre: "Maria Lopez",
       usuarioFoto: "https://randomuser.me/api/portraits/women/3.jpg",
       fecha: moment().subtract(1, 'hour').toISOString(),
-      descripcion: "Venta de artesanías en Paucarpata. Apoya a nuestros artesanos locales.",
+      descripcion: "Denuncian un caso de maltrato animal en Paucarpata.",
       fotos: ["https://via.placeholder.com/300x200"],
       comentarios: [
         {
           usuarioNombre: "Ana Mendoza",
           usuarioFoto: "https://randomuser.me/api/portraits/women/4.jpg",
-          comentario: "¡Iré a ver las artesanías! Amo este tipo de eventos.",
-          likes: 25
+          comentario: "Es horrible que aún haya personas que hagan esto. ¿Cómo podemos ayudar?",
+          likes: 32
         }
       ],
       ubicacion: {
@@ -94,14 +94,14 @@ const Anuncio = () => {
       usuarioNombre: "Ricardo Sánchez",
       usuarioFoto: "https://randomuser.me/api/portraits/men/5.jpg",
       fecha: moment().subtract(2, 'hours').toISOString(),
-      descripcion: "Evento de adopción de mascotas en Yanahuara, ¡ven y encuentra a tu nuevo amigo!",
+      descripcion: "Se reportó un robo en Yanahuara. La policía está investigando.",
       fotos: ["https://via.placeholder.com/300x200"],
       comentarios: [
         {
           usuarioNombre: "Sofía García",
           usuarioFoto: "https://randomuser.me/api/portraits/women/6.jpg",
-          comentario: "¡Qué lindo evento! Me encantan los animales.",
-          likes: 30
+          comentario: "Espero que encuentren a los responsables, esta situación es alarmante.",
+          likes: 22
         }
       ],
       ubicacion: {
@@ -117,14 +117,14 @@ const Anuncio = () => {
       usuarioNombre: "Ana Morales",
       usuarioFoto: "https://randomuser.me/api/portraits/women/7.jpg",
       fecha: moment().subtract(3, 'hours').toISOString(),
-      descripcion: "Festival de música en Cayma, ¡entrada gratuita!",
+      descripcion: "Emergencia en Cayma por desborde de un canal.",
       fotos: ["https://via.placeholder.com/300x200"],
       comentarios: [
         {
           usuarioNombre: "Luis Castro",
           usuarioFoto: "https://randomuser.me/api/portraits/men/8.jpg",
-          comentario: "La mejor música en vivo, ¡voy seguro!",
-          likes: 15
+          comentario: "Espero que la ayuda llegue rápido. ¿Alguien sabe si hubo daños?",
+          likes: 28
         }
       ],
       ubicacion: {
@@ -140,14 +140,14 @@ const Anuncio = () => {
       usuarioNombre: "Miguel Torres",
       usuarioFoto: "https://randomuser.me/api/portraits/men/9.jpg",
       fecha: moment().subtract(5, 'hours').toISOString(),
-      descripcion: "Taller de fotografía en Alto Selva Alegre, ¡todos están invitados!",
+      descripcion: "Violencia en Alto Selva Alegre. Vecinos piden más seguridad.",
       fotos: ["https://via.placeholder.com/300x200"],
       comentarios: [
         {
           usuarioNombre: "Elena López",
           usuarioFoto: "https://randomuser.me/api/portraits/women/10.jpg",
-          comentario: "¡Suena interesante! Me gusta la fotografía.",
-          likes: 20
+          comentario: "Cada vez es más peligroso salir de noche, necesitamos más patrullas.",
+          likes: 33
         }
       ],
       ubicacion: {
@@ -163,14 +163,14 @@ const Anuncio = () => {
       usuarioNombre: "Patricia Fuentes",
       usuarioFoto: "https://randomuser.me/api/portraits/women/11.jpg",
       fecha: moment().subtract(1, 'day').toISOString(),
-      descripcion: "Exhibición de arte contemporáneo en Sachaca, ¡entrada libre!",
+      descripcion: "Incendio en Sachaca. Los vecinos han comenzado a evacuar la zona.",
       fotos: ["https://via.placeholder.com/300x200"],
       comentarios: [
         {
           usuarioNombre: "Roberto Díaz",
           usuarioFoto: "https://randomuser.me/api/portraits/men/12.jpg",
-          comentario: "Me encanta el arte contemporáneo, ¡nos vemos allí!",
-          likes: 40
+          comentario: "Ojalá todos estén a salvo, es una tragedia lo que está pasando.",
+          likes: 50
         }
       ],
       ubicacion: {
@@ -181,8 +181,8 @@ const Anuncio = () => {
         pais: "Perú"
       }
     }
-  ];
-  
+];
+
 
   const menu = (
     <Menu onClick={(e) => setFiltro(e.key)}>
