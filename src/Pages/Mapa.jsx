@@ -1,4 +1,4 @@
-'use client';
+"use client";
 
 import {
   APIProvider,
@@ -9,19 +9,23 @@ import {
 import { MarkerClusterer } from "@googlemaps/markerclusterer";
 import { useEffect, useState, useRef } from "react";
 import trees from "../data/trees";
-// [{ name: "Oak, English", lat: 43.64, lng: -79.41, key: "ABCD" }]
 
 export default function Intro() {
+  const API_KEY = import.meta.env.GOOGLE_MAPS_API_KEY;
+  const MAP_ID = import.meta.env.NEXT_PUBLIC_MAP_ID;
+
   return (
-    <div style={{ height: "100vh", width: "100%" }}>
+    <div>
       <APIProvider apiKey="AIzaSyAi0RXyT9ed2ldXSKD5F4uL5QdU-VGGo_k">
         <Map
-          center={{ lat: 43.64, lng: -79.41 }}
-          zoom={10}
-          mapId="fb9f5de9cedd0760"
-        >
-          <Markers points={trees} />
-        </Map>
+          style={{ width: "100vw", height: "100vh" }}
+          defaultCenter={{ lat: 43.64, lng: -79.41 }}
+          defaultZoom={3}
+          mapId='fb9f5de9cedd0760'
+          gestureHandling={"greedy"}
+          disableDefaultUI={true}
+        />
+        <Markers points={trees} />
       </APIProvider>
     </div>
   );
@@ -67,7 +71,9 @@ const Markers = ({ points }) => {
           key={point.key}
           ref={(marker) => setMarkerRef(marker, point.key)}
         >
-          <span style={{ fontSize: "2rem" }}>🌳</span>
+          <span style={{ fontSize: "2rem" }}>
+            <img src="imgs/alert.svg" width={50} alt="img" />{" "}
+          </span>
         </AdvancedMarker>
       ))}
     </>
