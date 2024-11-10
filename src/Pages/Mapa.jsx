@@ -19,7 +19,7 @@ export default function Intro() {
       <APIProvider apiKey="AIzaSyAi0RXyT9ed2ldXSKD5F4uL5QdU-VGGo_k">
         <Map
           style={{ width: "100vw", height: "100vh" }}
-          defaultCenter={{ lat: 43.64, lng: -79.41 }}
+          defaultCenter={{ lat:-16.3992754, lng: -71.5372471 }}
           defaultZoom={3}
           mapId='fb9f5de9cedd0760'
           gestureHandling={"greedy"}
