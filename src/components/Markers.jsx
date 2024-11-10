@@ -42,8 +42,8 @@ const Markers = ({ points }) => {
           key={point.key}
           ref={(marker) => setMarkerRef(marker, point.key)}
         >
-          <span>
-            <img src="imgs/alert.svg" width={50} alt="img" />{" "}
+          <span >
+            <img src={`imgs/${point.tipo}.png`} width={50} alt="img" />{" "}
           </span>
         </AdvancedMarker>
       ))}

@@ -6,6 +6,7 @@ const Alerta = () => {
   const [searchParams] = useSearchParams();
   const lat = searchParams.get("lat");
   const lng = searchParams.get("lng");
+  const placeName = searchParams.get("placeName");
 
   //const arrow = "⬅️";
   //const exit = "❌";
@@ -22,7 +23,7 @@ const Alerta = () => {
       </div>
       <div className="w-full grid grid-cols-3 gap-5 p-6">
         {alerts.map((alert, index) => (
-          <Link to={`/detalleEvento?lat=${lat}&lng=${lng}`} key={index} className={styleAlert}>
+          <Link to={`/detalleEvento?lat=${lat}&lng=${lng}&placeName=${placeName}&tipo=${alert.tipo}`} key={index} className={styleAlert}>
             <img src={`imgs/${alert.url}`} width={80} alt={`imgs/${alert.tipo}`} />
           </Link>
         ))}

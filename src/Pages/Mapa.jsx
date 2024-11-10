@@ -1,14 +1,25 @@
 "use client";
 
 import { APIProvider, Map } from "@vis.gl/react-google-maps";
-import trees from "../data/trees";
+//import treess from "../data/trees";
 import AlertButton from "../components/AlertButton";
 import Markers from "../components/Markers";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export default function Intro() {
   const API_KEY = import.meta.env.VITE_GOOGLE_MAPS_API_KEY;
   const MAP_ID = import.meta.env.VITE_PUBLIC_MAP_ID;
+
+  const [trees, setTrees] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get('http://localhost:3001/trees').then(response => {
+        setTrees(response.data)
+      })
+  }, [])
+
 
   const mapOptions = {
     disableDefaultUI: true,

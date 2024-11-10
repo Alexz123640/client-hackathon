@@ -11,9 +11,18 @@ const AlertButton = () => {
       const center = map.getCenter();
       const lat = center.lat();
       const lng = center.lng();
-      //navigate(`/anuncio`);
-      navigate(`/alerta?lat=${lat}&lng=${lng}`);
-      console.log("center",lat,lng);
+
+      // Usar el servicio de geocodificación inversa de Google Maps para obtener el nombre del lugar
+      const geocoder = new window.google.maps.Geocoder();
+      geocoder.geocode({ location: { lat, lng } }, (results, status) => {
+        if (status === "OK" && results[0]) {
+          const placeName = results[0].formatted_address;
+          navigate(`/alerta?lat=${lat}&lng=${lng}&placeName=${placeName}`);
+          console.log("center", lat, lng, typeof(placeName), placeName);
+        } else {
+          console.error("Geocoding failed: ", status);
+        }
+      });
     }
   };
 
