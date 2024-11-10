@@ -1,6 +1,6 @@
 import "./App.css";
 import { Route, Routes } from "react-router-dom";
-import Home from "./Pages/Mapa";
+import Mapa from "./Pages/Mapa";
 import Anuncio from "./Pages/Anuncio";
 import Grupo from "./Pages/Grupo";
 import Bar from "./components/Bar";
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="relative h-[100vh]">
       <Routes>
-        <Route path="/" element={<Home />} />
+        <Route path="/" element={<Mapa />} />
         <Route path="/anuncio" element={<Anuncio />} />
         <Route path="/grupos" element={<Grupo />} />
         <Route path="/menu" element={<Menu />} />
